@@ -5,78 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack's TikTok Automation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Resetting some basic styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(90deg, #FE2C55, #FF575F);
+            color: #ffffff;
+            padding: 20px 10px;
             text-align: center;
         }
-        header {
-            background-color: #000;
-            padding: 20px 10px;
-        }
+
         header h1 {
-            color: #FE2C55;
+            font-size: 3em;
+            font-weight: bold;
             margin: 0;
-            font-size: 2.5em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Main container */
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 40px auto;
-            padding: 20px;
+            background-color: #1c1c1e;
             border-radius: 10px;
-            background-color: #161616;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
         }
+
+        .container .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2em;
+            color: #FE2C55;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            font-size: 1.1em;
+            color: #ddd;
+        }
+
+        /* Button styling */
         .btn {
             display: inline-block;
-            background-color: #FE2C55;
-            color: #fff;
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
             margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #FE2C55, #FF575F);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(254, 44, 85, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .btn:hover {
-            background-color: #FF4057;
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 20px rgba(254, 44, 85, 0.6);
         }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0px 4px 10px rgba(254, 44, 85, 0.4);
+        }
+
+        /* Footer styling */
         footer {
-            margin-top: 40px;
-            color: #aaa;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #161616;
+            text-align: center;
+            color: #888;
             font-size: 0.9em;
+        }
+
+        footer a {
+            color: #FE2C55;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Jack's TikTok Automation</h1>
+        <p>Automate Your TikTok Growth with Ease</p>
     </header>
 
+    <!-- Main Content -->
     <div class="container">
-        <h2>Automate Your TikTok Growth</h2>
-        <p>Save time and grow your TikTok audience effortlessly with Jack's TikTok Automation.</p>
-        <p>Subscribe now for just <strong>$20 per month</strong>.</p>
-
-        <!-- PayPal Button -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_xclick-subscriptions">
-            <input type="hidden" name="business" value="tallarmyforlife@gmail.com">
-            <input type="hidden" name="item_name" value="Jack's TikTok Automation">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="hidden" name="a3" value="20.00">
-            <input type="hidden" name="p3" value="1">
-            <input type="hidden" name="t3" value="M">
-            <input type="hidden" name="src" value="1">
-            <input type="hidden" name="sra" value="1">
-            <button type="submit" class="btn">Subscribe with PayPal</button>
-        </form>
+        <div class="content">
+            <h2>Why Choose Us?</h2>
+            <p>Save time and effortlessly grow your TikTok audience with our automation tool. Jack's TikTok Automation helps you focus on creating content while we handle the growth!</p>
+            <p><strong>Subscribe for only $20 per month.</strong></p>
+            
+            <!-- PayPal Form -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="return confirmSubscription();">
+                <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                <input type="hidden" name="business" value="tallarmyforlife@gmail.com">
+                <input type="hidden" name="item_name" value="Jack's TikTok Automation">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="a3" value="20.00">
+                <input type="hidden" name="p3" value="1">
+                <input type="hidden" name="t3" value="M">
+                <input type="hidden" name="src" value="1">
+                <input type="hidden" name="sra" value="1">
+                <button type="submit" class="btn">Subscribe with PayPal</button>
+            </form>
+        </div>
     </div>
 
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Jack's TikTok Automation. All rights reserved.</p>
+        <p>&copy; 2024 Jack's TikTok Automation. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function confirmSubscription() {
+            return confirm(\"Are you sure you want to subscribe to Jack's TikTok Automation for $20 per month?\");
+        }
+    </script>
 </body>
 </html>
